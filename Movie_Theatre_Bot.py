@@ -267,7 +267,7 @@ async def list(ctx):
             num += 1
 
         await ctx.channel.send(embed=embed)
-        reutrn
+        return
 
 
 
@@ -391,6 +391,11 @@ async def edit(ctx, num):
     
     numInt = int(num)
 
+    ia = imdb.IMDb()
+
+    def check(m):
+        return m.author == ctx.author and m.channel == ctx.channel
+
     # Checks if the list is empty
     if number == 0:
         await ctx.channel.send("List is Empty! " + author)
@@ -401,11 +406,11 @@ async def edit(ctx, num):
         await ctx.channel.send("Invalid Number! " + author)
         return
 
-    i = 0
+    i = 1
 
     # accesses the node in the linked list
     while i is not numInt:
-        curr= curr.next
+        curr = curr.next
         i+= 1
 
     # Waits for a movie name to be put into chat 
@@ -413,9 +418,11 @@ async def edit(ctx, num):
 
     movie = await client.wait_for('message', check=check, timeout= 20)
 
-    ia = imdb.IMDb()
+    name = movie.content
+
     # searching the movie 
-    search = ia.search_movie(movie)
+    search = ia.search_movie(name)
+
     try:
 
         # gets movie id. if cannot get the id because the movie doesnt exist 
@@ -431,12 +438,15 @@ async def edit(ctx, num):
 
         time = await client.wait_for('message', check=check, timeout= 20)
 
+        print(movie.content)
+        print(date.content)
+        print(time.content)
+
         # changes the value of everything in the node
-        curr.name = movie
-
-        curr.date = date
-
-        curr.time = time
+    
+        curr.name = movie.content
+        curr.date = date.content
+        curr.time = time.content
 
         await ctx.channel.send("Editted Successfully! " + author)
 
