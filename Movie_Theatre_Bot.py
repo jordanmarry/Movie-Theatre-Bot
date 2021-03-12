@@ -2,11 +2,9 @@
 import discord
 import imdb 
 import asyncio
+import os
 
 from discord.ext import tasks, commands 
-
-f = open('token.txt', 'r')
-token = f.read()
 
 client = commands.Bot(command_prefix = '!')
 
@@ -459,6 +457,5 @@ async def edit(ctx, num):
 
 
 
-
-client.run(token)
+client.run(os.environ['MOVIE_BOT_TOKEN'])
 
