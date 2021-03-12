@@ -1,1 +1,1 @@
-worker: Movie_Theatre_Bot.py
+worker: python Movie_Theatre_Bot.py
