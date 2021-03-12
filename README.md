@@ -2,7 +2,7 @@
 Discord bot that can search for movies using IMdB.py. The bot can also add, remove, and edit movie nights.
 
 ## Files
-  - `token.txt` Discord API token in txt file
+  - `MOVIE_BOT_TOKEN` Discord API token as environment variable
   
 ## Things to Add
   - Add Anti-Spam
