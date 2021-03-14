@@ -1,8 +1,8 @@
 # Movie Theatre Bot (WIP)
 Discord bot that can search for movies using IMdB.py. The bot can also add, remove, and edit movie nights.
 
-## Variables
-  - `MOVIE_BOT_TOKEN` Discord Token given from Discord Developer Page as environment variable
+## Environment Variables
+  - `MOVIE_BOT_TOKEN` Discord Token given from Discord Developer Page
   
 ## Things to Add
   - Add Anti-Spam
