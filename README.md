@@ -3,11 +3,5 @@ Discord bot that can search for movies using IMdB.py. The bot can also add, remo
 
 ## Environment Variables
   - `MOVIE_BOT_TOKEN` Discord Token given from Discord Developer Page
-  
-## Things to Add
-  - Add Anti-Spam
-  - Add Date Format
-  - Add Time Format
-  - Add Function to auto delete the movie night if passed
 
 
